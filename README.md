@@ -11,7 +11,7 @@
   - Clean Syntax
 <br>
 
-**Application of C**
+**APPLICATION OF C**
 - **Operating systems:** C is widely used for developing operating systems such as Unix, Linux, and Windows.
 - **Embedded systems:** C is a popular language for developing embedded systems such as microcontrollers, microprocessors, and other electronic devices.
 - **System software:** C is used for developing system software such as device drivers, compilers, and assemblers.
@@ -21,6 +21,34 @@
 - **Artificial Intelligence:** C is used for developing artificial intelligence and machine learning applications such as neural networks and deep learning algorithms.
 - **Scientific applications:** C is used for developing scientific applications such as simulation software and numerical analysis tools.
 - **Financial applications:** C is used for developing financial applications such as stock market analysis and trading systems.
+
+## COMMENTS
+- Comments can be used to explain code, and to make it more readable. It can also be used to prevent execution when testing alternative code.
+- Comments can be singled-lined or multi-lined.
+<br>
+
+**Single-line Comments**
+- Single-line comments start with two forward slashes (`//`).
+- Any text between `//` and the end of the line is ignored by the compiler (will not be executed).
+- EXAMPLE:
+```
+printf("Hello World!");    // This is a comment.
+```
+OUTPUT: `Hello World!`
+<br>
+
+**Multi-line Comments**
+- Multi-line comments start with `/*` and ends with `*/`.
+- Any text between `/*` and `*/` will be ignored by the compiler.
+- EXAMPLE:
+```
+/* The code below,
+will print the words Hello World! to the screen. */
+printf("Hello World!");
+```
+OUTPUT: Hello World!
+<br>
+
 
 ## C-PROGRAMS
 <BR>
@@ -76,3 +104,5 @@ int main(){
 >Whatever you are,
 ><br>
 >be a good one.
+<br>
+
