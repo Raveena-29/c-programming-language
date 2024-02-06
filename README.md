@@ -49,6 +49,140 @@ printf("Hello World!");
 OUTPUT: Hello World!
 <br>
 
+## VARIABLES
+- Variables are containers for storing data values, like numbers and characters.
+- In C, there are different types of variables (defined with different keywords), for example:
+  - `int` : stores integers (whole numbers), without decimals, such as `123` or `-123`.
+  - `float` : stores floating point numbers, with decimals, such as `19.99` or `-19.99`.
+  - `char` : stores single characters, such as `'a'` or `'B'`. Characters are surrounded by single quotes.
+<BR>
+
+**Declaring (Creating) Variables**
+<br>
+- To create a variable, specify the type and assign it a value.
+- Syntax:
+```
+type variableName = value;
+```
+  - EXAMPLE:
+```
+int myNum = 15;
+```
+**OR**
+```
+// Declare a variable
+int myNum;
+
+// Assign a value to the variable
+myNum = 15;
+```
+**OUTPUT VARIABLES**
+- **Format Specifiers**
+  - Format specifiers are used together with the `printf()` function to tell the compiler what type of data the variable is storing. It is basically a placeholder for the variable value.
+  - A format specifier starts with a percentage sign `%`, followed by a character.
+  - For example, to output the value of an int variable, use the format specifier `%d` surrounded by double quotes (`""`), inside the `printf()` function.
+  - To print other types, use %c for char and %f for float.
+  - EXAMPLE:
+```
+// Creating variables
+int myNum = 15;            // Integer (whole number)
+float myFloatNum = 5.99;   // Floating point number
+char myLetter = 'D';       // Character
+
+// Print variables
+printf("%d\n", myNum);
+printf("%f\n", myFloatNum);
+printf("%c\n", myLetter);
+```
+```
+int myNum = 15;
+char myLetter = 'D';
+printf("My number is %d and my letter is %c", myNum, myLetter);
+```
+
+>[!NOTE]
+>In many other programming languages (like Python, Java, and C++), you would normally use a print function to display the value of a variable. However, this is not possible in C.
+
+|Format Specifier|Data Type|
+|---|---|
+|`%d` or `%i`|`int`|
+|`%lu`|long unsigned int|
+|`%f` or `%F`|`float`|
+|`%lf`|`double`|
+|`%c`|`char`|
+|`s`|Used for strings (text)|
+
+- **sizeof operator**
+  - The memory size refers to how much space a type occupies in the computer's memory.
+  - To actually get the size (in bytes) of a data type or variable, use the `sizeof` operator.
+  - EXAMPLE:
+```
+int myInt;
+float myFloat;
+double myDouble;
+char myChar;
+
+printf("%lu\n", sizeof(myInt));
+printf("%lu\n", sizeof(myFloat));
+printf("%lu\n", sizeof(myDouble));
+printf("%lu\n", sizeof(myChar));
+```
+## DATA TYPE CONVERSION
+- There are two types of conversion in C:
+  - Implicit Conversion (automatically)
+  - Explicit Conversion (manually)
+- Implicit Conversion:
+  - Implicit conversion is done automatically by the compiler when you assign a value of one type to another.
+- Explicit Conversion:
+  - Explicit conversion is done manually by placing the type in parentheses () in front of the value.
+## if loop
+- **The `if` Statement**
+  - Use the if statement to specify a block of code to be executed if a condition is true.
+  - Syntax
+```
+if (condition) {
+  // block of code to be executed if the condition is true
+}
+```
+```
+// EXAMPLE
+if (20 > 18) {
+  printf("20 is greater than 18");
+}
+```
+- **The `else` Statement**
+  - Use the else statement to specify a block of code to be executed if the condition is false.
+  - Syntax:
+```
+if (condition) {
+  // block of code to be executed if the condition is true
+} else {
+  // block of code to be executed if the condition is false
+}
+```
+```
+//EXAMPLE
+int time = 20;
+if (time < 18) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+// Outputs "Good evening."
+```
+- **Short Hand If...Else (Ternary Operator)**
+  - There is also a short-hand if else, which is known as the ternary operator because it consists of three operands.
+  - It can be used to replace multiple lines of code with a single line.
+  - It is often used to replace simple if else statements.
+  - SYNTAX:
+```
+variable = (condition) ? expressionTrue : expressionFalse;
+```
+```
+// EXAMPLE
+int time = 20;
+(time < 18) ? printf("Good day.") : printf("Good evening.");
+```
 
 ## C-PROGRAMS
 <BR>
