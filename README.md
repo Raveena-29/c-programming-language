@@ -47,3 +47,21 @@ OUTPUT: HELLO WORLD!
 - **Line4** : `return 0` ends the `main()` function.
 - **Line 5** : Do not forget to add the closing curly bracket `}` to actually end the main function.
 </details>
+<br>
+
+**PROGRAM 2**
+<br>
+**Ques**: Printing using newline character.
+```
+#include<stdio.h>
+int main(){
+    printf("Whatever you are,\n");
+    printf("be a good one.");
+    return 0;
+}
+```
+>OUTPUT:
+><br>
+>Whatever you are,
+><br>
+>be a good one.
