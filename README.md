@@ -110,7 +110,7 @@ printf("My number is %d and my letter is %c", myNum, myLetter);
 |`%f` or `%F`|`float`|
 |`%lf`|`double`|
 |`%c`|`char`|
-|`s`|Used for strings (text)|
+|`%s`|Used for strings (text)|
 
 - **sizeof operator**
   - The memory size refers to how much space a type occupies in the computer's memory.
@@ -170,6 +170,29 @@ if (time < 18) {
 }
 // Outputs "Good evening."
 ```
+- **The else if statement**
+  - Use the else if statement to specify a new condition if the first condition is false.
+  - Syntax:
+```
+if (condition1) {
+  // block of code to be executed if condition1 is true
+} else if (condition2) {
+  // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  // block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+```
+int time = 22;
+if (time < 10) {
+  printf("Good morning.");
+} else if (time < 20) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+// Outputs "Good evening."
+```
 - **Short Hand If...Else (Ternary Operator)**
   - There is also a short-hand if else, which is known as the ternary operator because it consists of three operands.
   - It can be used to replace multiple lines of code with a single line.
@@ -183,6 +206,223 @@ variable = (condition) ? expressionTrue : expressionFalse;
 int time = 20;
 (time < 18) ? printf("Good day.") : printf("Good evening.");
 ```
+## C switch 
+**Switch Statement**
+- Instead of writing many `if..else` statements, one can use the switch statement.
+- The switch statement selects one of many code blocks to be executed.
+- Syntax
+```
+switch (expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+<details>
+<summary>
+
+  **This is how it works**
+</summary>
+
+- The switch expression is evaluated once.
+- The value of the expression is compared with the values of each case.
+- If there is a match, the associated block of code is executed.
+- The break statement breaks out of the switch block and stops the execution.
+- The default statement is optional, and specifies some code to run if there is no case match.
+</details>
+
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  int day = 4;
+  switch (day) {
+    case 1:
+      printf("Monday");
+      break;
+    case 2:
+      printf("Tuesday");
+      break;
+    case 3:
+      printf("Wednesday");
+      break;
+    case 4:
+      printf("Thursday");
+      break;
+    case 5:
+      printf("Friday");
+      break;
+    case 6:
+      printf("Saturday");
+      break;
+    case 7:
+      printf("Sunday");
+      break;
+  }    
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>Thursday
+<br>
+
+**The break Keyword**
+- When C reaches a break keyword, it breaks out of the switch block.
+- This will stop the execution of more code and case testing inside the block.
+<br>
+
+#include <stdio.h>
+
+int main() {
+  int day = 4;
+  
+  switch (day) {
+  case 6:
+    printf("Today is Saturday");
+    break;
+  case 7:
+    printf("Today is Sunday");
+    break;
+  default:
+    printf("Looking forward to the Weekend");
+  }
+  
+  return 0;
+}
+
+>OUTPUT
+><br>
+> Looking forward to the Weekend
+
+## C While Loop
+**Loops**
+- Loops can execute a block of code as long as a specified condition is reached.
+- Loops are handy because they save time, reduce errors, and they make code more readable.
+<br>
+
+**While Loop**
+- The `while` loop loops through a block of code as long as a specified condition is `true`.
+- Syntax
+```
+while (condition) {
+  // code block to be executed
+}
+```
+- EXAMPLE: the code in the loop will run, over and over again, as long as a variable (i) is less than 5.
+```
+#include <stdio.h>
+
+int main() {
+  int i = 0;
+  
+  while (i < 5) {
+    printf("%d\n", i);
+    i++;
+  }
+  
+  return 0;
+}
+```
+>OUTPUT
+><BR>
+>0
+><br>
+>1
+><br>
+>2
+><br>
+>3
+><br>
+>4
+
+**Do-While Loop**
+- The do/while loop is a variant of the while loop.
+- This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+- Syntax:
+```
+do {
+  // code block to be executed
+}
+while (condition);
+```
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  int i = 0;
+  
+  do {
+    printf("%d\n", i);
+    i++;
+  }
+  while (i < 5);
+  
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>0
+><br>
+>1
+><br>
+>2
+><br>
+>3
+><br>
+>4
+
+## C For Loop
+- When we know exactly how many times we want to loop through a block of code, use the for loop instead of a while loop.
+- Syntax:
+```
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+```
+- EXPLAINATION OF SYNTAX:
+  - Expression 1 is executed (one time) before the execution of the code block.
+  - Expression 2 defines the condition for executing the code block.
+  - Expression 3 is executed (every time) after the code block has been executed.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  int i;
+
+  for (i = 0; i < 5; i++) {
+    printf("%d\n", i);
+  }
+  
+  return 0;
+}
+```
+>OUTPUT
+><br>
+>0
+><br>
+>1
+><br>
+>2
+><br>
+>3
+><br>
+>4
+- EXAMPLE EXPLAINED:
+  - Expression 1 sets a variable before the loop starts (int i = 0).
+  - Expression 2 defines the condition for the loop to run (i must be less than 5). If the condition is true, the loop will start over again, if it is false, the loop will end.
+  - Expression 3 increases a value (i++) each time the code block in the loop has been executed.
+
+
 
 ## C-PROGRAMS
 <BR>
@@ -239,4 +479,5 @@ int main(){
 ><br>
 >be a good one.
 <br>
+
 
