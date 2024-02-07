@@ -170,7 +170,7 @@ if (time < 18) {
 }
 // Outputs "Good evening."
 ```
-- **The else if statement**
+- **The `else if` statement**
   - Use the else if statement to specify a new condition if the first condition is false.
   - Syntax:
 ```
@@ -278,6 +278,7 @@ int main() {
 - This will stop the execution of more code and case testing inside the block.
 <br>
 
+```
 #include <stdio.h>
 
 int main() {
@@ -296,7 +297,7 @@ int main() {
   
   return 0;
 }
-
+```
 >OUTPUT
 ><br>
 > Looking forward to the Weekend
