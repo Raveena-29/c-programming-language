@@ -422,6 +422,75 @@ int main() {
   - Expression 1 sets a variable before the loop starts (int i = 0).
   - Expression 2 defines the condition for the loop to run (i must be less than 5). If the condition is true, the loop will start over again, if it is false, the loop will end.
   - Expression 3 increases a value (i++) each time the code block in the loop has been executed.
+<br>
+
+**Nested Loops**
+- It is also possible to place a loop inside another loop. This is called a nested loop.
+- The "inner loop" will be executed one time for each iteration of the "outer loop".
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  int i, j;
+  
+  // Outer loop
+  for (i = 1; i <= 2; ++i) {
+    printf("Outer: %d\n", i);  // Executes 2 times
+    
+    // Inner loop
+    for (j = 1; j <= 3; ++j) {
+      printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)
+    }
+  }
+  
+  return 0;
+}
+```
+>OUTPUT
+><br>
+>
+>Outer: 1
+><br>
+> Inner: 1
+><br>
+> Inner: 2
+><br>
+> Inner: 3
+><br>
+>Outer: 2
+><br>
+> Inner: 1
+><br>
+> Inner: 2
+><br>
+> Inner: 3
+<br>
+
+## ARRAYS
+**ARRAYS**
+- Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+- To create an array, define the data type (like `int`) and specify the name of the array followed by square brackets [].
+- To insert values to it, use a comma-separated list, inside curly braces.
+- Syntax
+```
+int myNumbers[] = {25, 50, 75, 100};
+```
+**Access the Elements of an Array**
+- To access an array element, refer to its index number.
+- Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+- This statement accesses the value of the first element [0] in `myNumbers`.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
