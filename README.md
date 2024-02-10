@@ -659,6 +659,7 @@ int main() {
 ><br>
 >8
 <br>
+
 **C STRINGS**
 - Strings are used for storing text/characters.
 - For example, "Hello World" is a string of characters.
@@ -678,8 +679,8 @@ int main() {
   return 0;
 }
 ```
->OUTPUT: Hello World!
-<br>
+>OUTPUT:
+> Hello World!
 
 
 
