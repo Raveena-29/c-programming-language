@@ -480,15 +480,205 @@ int myNumbers[] = {25, 50, 75, 100};
 - To access an array element, refer to its index number.
 - Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
 - This statement accesses the value of the first element [0] in `myNumbers`.
+- EXAMPLE:
+```
+#include <stdio.h>
 
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  printf("%d", myNumbers[0]);
+ 
+  return 0;
+}
+```
+**Change an Array Element**
+- To change the value of a specific element, refer to the index number.
+- EXAMPLE:
+```
+myNumbers[0] = 33;
+```
+```
+#include <stdio.h>
 
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  myNumbers[0] = 33;
 
+  printf("%d", myNumbers[0]);
+ 
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>33
+**Set Array Size**
+- Another common way to create arrays, is to specify the size of the array, and add elements later.
+- EXAMPLE:
+```
+#include <stdio.h>
 
+int main() {
+  // Declare an array of four integers:
+  int myNumbers[4];
 
+  // Add elements to it
+  myNumbers[0] = 25;
+  myNumbers[1] = 50;
+  myNumbers[2] = 75;
+  myNumbers[3] = 100;
 
+  printf("%d\n", myNumbers[0]);
+ 
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>25
 
+**Get Array Size or Length**
+- To get the size of an array, you can use the `sizeof` operator.
+- The `sizeof` operator returns the size of a type in bytes.
+- EXAMPLE:
+```
+#include <stdio.h>
 
+int main() {
+  int myNumbers[] = {10, 25, 50, 75, 100};
+  printf("%lu", sizeof(myNumbers));
+ 
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>20
+```
+#include <stdio.h>
 
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  int length = sizeof(myNumbers) / sizeof(myNumbers[0]);
+  int i;
+
+  for (i = 0; i < length; i++) {
+    printf("%d\n", myNumbers[i]);
+  }
+  
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>25
+><br>
+>50
+><br>
+>75
+><br>
+>100
+
+**MULTIDIMENSIONAL ARRAYS**
+- A multidimensional array is basically an array of arrays.
+- Arrays can have any number of dimensions.
+**Two-Dimensional Arrays**
+- A 2D array is also known as a matrix (a table of rows and columns).
+- To create a 2D array of integers, take a look at the following example:
+```
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+```
+>EXPLAINATION:
+>The first dimension represents the number of rows [2], while the second dimension represents the number of columns [3]. The values are placed in row-order, and can be visualized like this:
+>||Column 0|Column 1|Column 2|
+>|---|---|---|---|
+>|Row 0|1|4|2|
+>|Row 1|3|6|8|
+**Access the Elements of a 2D Array**
+- To access an element of a two-dimensional array, specify the index number of both the row and column.
+- EXAMPLE:This example accesses the value of the element in the first row (0) and third column (2) of the matrix array.
+```
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+  printf("%d", matrix[0][2]);
+ 
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>2
+**Change Elements in a 2D Array**
+- To change the value of an element, refer to the index number of the element in each of the dimensions:
+- EXAMPLE: The following example will change the value of the element in the first row (0) and first column (0).
+```
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+  matrix[0][0] = 9;
+  printf("%d", matrix[0][0]);  // Now outputs 9 instead of 1
+ 
+  return 0;
+}
+```
+>OUTPUT:
+><br>
+>9
+**Loop Through a 2D Array**
+- To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
+- EXAMPLE: The following example outputs all elements in the matrix array:
+```
+#include <stdio.h>
+
+int main() {
+  int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+  int i, j;
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 3; j++) {
+      printf("%d\n", matrix[i][j]);
+    }
+  }
+  
+  return 0;
+}
+```
+>OUTPUT:
+>1
+><br>
+>4
+><br>
+>2
+><br>
+>3
+><br>
+>6
+><br>
+>8
+<br>
+**C STRINGS**
+- Strings are used for storing text/characters.
+- For example, "Hello World" is a string of characters.
+- Unlike many other programming languages, C does not have a String type to easily create string variables. Instead, use the `char` type and create an array of characters to make a string in C.
+```
+char greetings[] = "Hello World!";
+```
+- To output the string, you can use the printf() function together with the format specifier %s to tell C that we are now working with strings.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  char greetings[] = "Hello World!";
+  printf("%s", greetings);
+ 
+  return 0;
+}
+```
+>OUTPUT: Hello World!
 
 
 
