@@ -512,6 +512,8 @@ int main() {
 >OUTPUT:
 ><br>
 >33
+<br>
+
 **Set Array Size**
 - Another common way to create arrays, is to specify the size of the array, and add elements later.
 - EXAMPLE:
