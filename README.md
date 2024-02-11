@@ -629,6 +629,8 @@ int main() {
 >OUTPUT:
 ><br>
 >9
+<br>
+
 **Loop Through a 2D Array**
 - To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
 - EXAMPLE: The following example outputs all elements in the matrix array:
