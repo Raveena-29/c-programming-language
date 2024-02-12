@@ -9,8 +9,7 @@
   - Low-level Memory Access
   - Fast Speed
   - Clean Syntax
-<br>
-
+---
 **APPLICATION OF C**
 - **Operating systems:** C is widely used for developing operating systems such as Unix, Linux, and Windows.
 - **Embedded systems:** C is a popular language for developing embedded systems such as microcontrollers, microprocessors, and other electronic devices.
@@ -21,11 +20,12 @@
 - **Artificial Intelligence:** C is used for developing artificial intelligence and machine learning applications such as neural networks and deep learning algorithms.
 - **Scientific applications:** C is used for developing scientific applications such as simulation software and numerical analysis tools.
 - **Financial applications:** C is used for developing financial applications such as stock market analysis and trading systems.
-
+---
+---
 ## COMMENTS
 - Comments can be used to explain code, and to make it more readable. It can also be used to prevent execution when testing alternative code.
 - Comments can be singled-lined or multi-lined.
-<br>
+---
 
 **Single-line Comments**
 - Single-line comments start with two forward slashes (`//`).
@@ -35,8 +35,8 @@
 printf("Hello World!");    // This is a comment.
 ```
 OUTPUT: `Hello World!`
-<br>
 
+---
 **Multi-line Comments**
 - Multi-line comments start with `/*` and ends with `*/`.
 - Any text between `/*` and `*/` will be ignored by the compiler.
@@ -46,8 +46,9 @@ OUTPUT: `Hello World!`
 will print the words Hello World! to the screen. */
 printf("Hello World!");
 ```
-OUTPUT: Hello World!
-<br>
+>OUTPUT:
+>Hello World!
+---
 
 ## VARIABLES
 - Variables are containers for storing data values, like numbers and characters.
@@ -55,7 +56,7 @@ OUTPUT: Hello World!
   - `int` : stores integers (whole numbers), without decimals, such as `123` or `-123`.
   - `float` : stores floating point numbers, with decimals, such as `19.99` or `-19.99`.
   - `char` : stores single characters, such as `'a'` or `'B'`. Characters are surrounded by single quotes.
-<BR>
+---
 
 **Declaring (Creating) Variables**
 <br>
@@ -76,6 +77,7 @@ int myNum;
 // Assign a value to the variable
 myNum = 15;
 ```
+---
 **OUTPUT VARIABLES**
 - **Format Specifiers**
   - Format specifiers are used together with the `printf()` function to tell the compiler what type of data the variable is storing. It is basically a placeholder for the variable value.
@@ -112,6 +114,7 @@ printf("My number is %d and my letter is %c", myNum, myLetter);
 |`%c`|`char`|
 |`%s`|Used for strings (text)|
 
+---
 - **sizeof operator**
   - The memory size refers to how much space a type occupies in the computer's memory.
   - To actually get the size (in bytes) of a data type or variable, use the `sizeof` operator.
@@ -127,6 +130,7 @@ printf("%lu\n", sizeof(myFloat));
 printf("%lu\n", sizeof(myDouble));
 printf("%lu\n", sizeof(myChar));
 ```
+---
 ## DATA TYPE CONVERSION
 - There are two types of conversion in C:
   - Implicit Conversion (automatically)
@@ -135,6 +139,7 @@ printf("%lu\n", sizeof(myChar));
   - Implicit conversion is done automatically by the compiler when you assign a value of one type to another.
 - Explicit Conversion:
   - Explicit conversion is done manually by placing the type in parentheses () in front of the value.
+---
 ## if loop
 - **The `if` Statement**
   - Use the if statement to specify a block of code to be executed if a condition is true.
@@ -150,6 +155,7 @@ if (20 > 18) {
   printf("20 is greater than 18");
 }
 ```
+---
 - **The `else` Statement**
   - Use the else statement to specify a block of code to be executed if the condition is false.
   - Syntax:
@@ -170,6 +176,7 @@ if (time < 18) {
 }
 // Outputs "Good evening."
 ```
+---
 - **The `else if` statement**
   - Use the else if statement to specify a new condition if the first condition is false.
   - Syntax:
@@ -193,6 +200,7 @@ if (time < 10) {
 }
 // Outputs "Good evening."
 ```
+---
 - **Short Hand If...Else (Ternary Operator)**
   - There is also a short-hand if else, which is known as the ternary operator because it consists of three operands.
   - It can be used to replace multiple lines of code with a single line.
@@ -206,6 +214,7 @@ variable = (condition) ? expressionTrue : expressionFalse;
 int time = 20;
 (time < 18) ? printf("Good day.") : printf("Good evening.");
 ```
+---
 ## C switch 
 **Switch Statement**
 - Instead of writing many `if..else` statements, one can use the switch statement.
@@ -273,6 +282,7 @@ int main() {
 >Thursday
 <br>
 
+---
 **The break Keyword**
 - When C reaches a break keyword, it breaks out of the switch block.
 - This will stop the execution of more code and case testing inside the block.
@@ -301,13 +311,14 @@ int main() {
 >OUTPUT
 ><br>
 > Looking forward to the Weekend
-
+---
 ## C While Loop
 **Loops**
 - Loops can execute a block of code as long as a specified condition is reached.
 - Loops are handy because they save time, reduce errors, and they make code more readable.
 <br>
 
+---
 **While Loop**
 - The `while` loop loops through a block of code as long as a specified condition is `true`.
 - Syntax
@@ -343,6 +354,7 @@ int main() {
 ><br>
 >4
 
+---
 **Do-While Loop**
 - The do/while loop is a variant of the while loop.
 - This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
@@ -380,7 +392,7 @@ int main() {
 >3
 ><br>
 >4
-
+---
 ## C For Loop
 - When we know exactly how many times we want to loop through a block of code, use the for loop instead of a while loop.
 - Syntax:
@@ -399,11 +411,9 @@ for (expression 1; expression 2; expression 3) {
 
 int main() {
   int i;
-
   for (i = 0; i < 5; i++) {
     printf("%d\n", i);
   }
-  
   return 0;
 }
 ```
@@ -424,6 +434,7 @@ int main() {
   - Expression 3 increases a value (i++) each time the code block in the loop has been executed.
 <br>
 
+---
 **Nested Loops**
 - It is also possible to place a loop inside another loop. This is called a nested loop.
 - The "inner loop" will be executed one time for each iteration of the "outer loop".
@@ -467,6 +478,7 @@ int main() {
 > Inner: 3
 <br>
 
+---
 ## ARRAYS
 **ARRAYS**
 - Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
@@ -476,6 +488,7 @@ int main() {
 ```
 int myNumbers[] = {25, 50, 75, 100};
 ```
+---
 **Access the Elements of an Array**
 - To access an array element, refer to its index number.
 - Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
@@ -491,6 +504,7 @@ int main() {
   return 0;
 }
 ```
+---
 **Change an Array Element**
 - To change the value of a specific element, refer to the index number.
 - EXAMPLE:
@@ -514,6 +528,7 @@ int main() {
 >33
 <br>
 
+---
 **Set Array Size**
 - Another common way to create arrays, is to specify the size of the array, and add elements later.
 - EXAMPLE:
@@ -539,6 +554,7 @@ int main() {
 ><br>
 >25
 
+---
 **Get Array Size or Length**
 - To get the size of an array, you can use the `sizeof` operator.
 - The `sizeof` operator returns the size of a type in bytes.
@@ -581,6 +597,7 @@ int main() {
 ><br>
 >100
 
+---
 **MULTIDIMENSIONAL ARRAYS**
 - A multidimensional array is basically an array of arrays.
 - Arrays can have any number of dimensions.
@@ -614,6 +631,7 @@ int main() {
 >2
 <br>
 
+---
 **Change Elements in a 2D Array**
 - To change the value of an element, refer to the index number of the element in each of the dimensions:
 - EXAMPLE: The following example will change the value of the element in the first row (0) and first column (0).
@@ -633,6 +651,7 @@ int main() {
 >9
 <br>
 
+---
 **Loop Through a 2D Array**
 - To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
 - EXAMPLE: The following example outputs all elements in the matrix array:
@@ -666,6 +685,7 @@ int main() {
 >8
 <br>
 
+---
 **C STRINGS**
 - Strings are used for storing text/characters.
 - For example, "Hello World" is a string of characters.
@@ -673,7 +693,7 @@ int main() {
 ```
 char greetings[] = "Hello World!";
 ```
-- To output the string, you can use the printf() function together with the format specifier %s to tell C that we are now working with strings.
+- To output the string, you can use the `printf()` function together with the format specifier `%s` to tell C that we are now working with strings.
 - EXAMPLE:
 ```
 #include <stdio.h>
@@ -687,10 +707,97 @@ int main() {
 ```
 >OUTPUT:
 > Hello World!
+---
+**Access Strings**
+- Since strings are actually arrays in C, string can be access by referring to its index number inside square brackets `[]`.
+- EXAMPLE: This example prints the first character (0) in greetings:
+```
+#include <stdio.h>
 
+int main() {
+  char greetings[] = "Hello World!";
+  printf("%c", greetings[0]);
+ 
+  return 0;
+}
+```
+> OUTPUT:
+> H
 
+>[!NOTE]
+>We have to use the %c format specifier to print a single character.
 
-## C-PROGRAMS
+---
+**Modify Strings**
+- To change the value of a specific character in a string, refer to the index number, and use single quotes.
+- EXAMPLE :
+```
+#include <stdio.h>
+
+int main() {
+  char word[] = "Good";
+  word[0] = 'W';
+  printf("%s", word);
+
+  return 0;
+}
+```
+>OUTPUT:
+>Wood
+---
+**Loop Through a String**
+```
+#include <stdio.h>
+
+int main() {
+  char carName[] = "Volvo";
+  int i;
+  
+  for (i = 0; i < 5; ++i) {
+    printf("%c\n", carName[i]);
+  }
+
+  return 0;
+}
+```
+>OUTPUT:
+>V
+><br>
+>o
+><br>
+>l
+><br>
+>v
+><br>
+>o
+```
+#include <stdio.h>
+
+int main() {
+  char carName[] = "Volvo";
+  int length = sizeof(carName) / sizeof(carName[0]);
+  int i;
+  
+  for (i = 0; i < length; ++i) {
+    printf("%c\n", carName[i]);
+  }
+
+  return 0;
+}
+```
+>OUTPUT:
+>V
+><br>
+>o
+><br>
+>l
+><br>
+>v
+><br>
+>o
+---
+
+# C-PROGRAMS
 <BR>
 
 **PROGRAM 1**
@@ -726,8 +833,8 @@ OUTPUT: HELLO WORLD!
 - **Line4** : `return 0` ends the `main()` function.
 - **Line 5** : Do not forget to add the closing curly bracket `}` to actually end the main function.
 </details>
-<br>
 
+---
 **PROGRAM 2**
 <br>
 **Ques**: Printing using newline character.
