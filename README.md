@@ -601,6 +601,8 @@ int main() {
 **MULTIDIMENSIONAL ARRAYS**
 - A multidimensional array is basically an array of arrays.
 - Arrays can have any number of dimensions.
+<br>
+
 **Two-Dimensional Arrays**
 - A 2D array is also known as a matrix (a table of rows and columns).
 - To create a 2D array of integers, take a look at the following example:
@@ -613,6 +615,7 @@ int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
 >|---|---|---|---|
 >|Row 0|1|4|2|
 >|Row 1|3|6|8|
+
 **Access the Elements of a 2D Array**
 - To access an element of a two-dimensional array, specify the index number of both the row and column.
 - EXAMPLE:This example accesses the value of the element in the first row (0) and third column (2) of the matrix array.
@@ -796,6 +799,19 @@ int main() {
 ><br>
 >o
 ---
+**Another Way Of Creating Strings**
+- Use a "string literal" to create a string variable. This is the easiest way to create a string in C.
+- A string can be create with a set of characters.
+- EXAMPLE:
+```
+char greetings[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+printf("%s", greetings);
+```
+>[!NOTE]
+><br>
+>The `\0` character at the end is known as the "null terminating character", and must be included when creating strings using this method. It tells C that this is the end of the string.
+
+
 
 # C-PROGRAMS
 <BR>
