@@ -1254,7 +1254,7 @@ printf("%d\n", *ptr);
 
 **PROGRAM 1**
 <br>
-**Ques**: Printing HELLO WORLD! .
+**QUESTION :** Printing HELLO WORLD! .
 ```
 #include<stdio.h>
 int main(){
@@ -1286,9 +1286,8 @@ int main(){
 </details>
 
 ---
-**PROGRAM 2**
-<br>
-**Ques**: Printing using newline character.
+**PROGRAM 2**<br>
+**QUESTION :** Printing using newline character.
 ```
 #include<stdio.h>
 int main(){
@@ -1301,6 +1300,25 @@ int main(){
 >Whatever you are,
 ><br>
 >be a good one.
-<br>
+---
+**PROGRAM 3** <br>
+**QUESTION :** <br>
+**Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a program to convert this temperature into Centigrade degrees.**
+```
+// Conversion of temperature from Fahrenheit to Centigrade
+#include <stdio.h>
 
+int main(){
+  float Fr, celcius;
+  printf("\nEnter the temperature (F) :");
+  scanf("%f",&Fr);
+  celcius= (Fr-32)*5/9;
+  printf("Temperature in Centigrade =%f\n",celcius);
+  return 0;
+}
 
+```
+>**OUTPUT :**
+>Enter the temperature (F) :32
+>Temperature in Centigrade =0.000000
+---
