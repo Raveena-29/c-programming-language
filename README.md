@@ -689,7 +689,7 @@ int main() {
 <br>
 
 ---
-**C STRINGS**
+### C STRINGS
 - Strings are used for storing text/characters.
 - For example, "Hello World" is a string of characters.
 - Unlike many other programming languages, C does not have a String type to easily create string variables. Instead, use the `char` type and create an array of characters to make a string in C.
@@ -811,10 +811,446 @@ printf("%s", greetings);
 ><br>
 >The `\0` character at the end is known as the "null terminating character", and must be included when creating strings using this method. It tells C that this is the end of the string.
 
+>**Difference between both string creating method dicussed above**<br>
+>The difference between the two ways of creating strings, is that the first method is easier to write, and you do not have to include the \0 character, as C will do it for you.
+><br>
+>You should note that the size of both arrays is the same: They both have 13 characters (space also counts as a character by the way), including the \0 character<br>
+>EXAMPLE:
+>```
+>#include <stdio.h>
+>int main() {
+>  char greetings[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+>  char greetings2[] = "Hello World!";
+>
+>  printf("%lu\n", sizeof(greetings));      // OUTPUTS 13
+>  printf("%lu\n", sizeof(greetings2));     // OUTPUTS 13
+>  
+>  return 0;
+>}
+>```
 
+**Strings - Special Characters** <br>
+- Because strings must be written within quotes, C will misunderstand this string, and generate an error:
+```
+char txt[] = "We are the so-called "Vikings" from the north.";     // Will give an error
+```
+- The solution to avoid this problem, is to use the _**backslash escape character**_.
+- The backslash (`\`) escape character turns special characters into string characters.
+
+|Escape character|Result|Description|
+|---|---|---|
+|`\'`|`'`|Single quote|
+|`\"`|`"`|Double quote|
+|`\\`|`\`|Backslash|
+
+**The sequence `\"`** : 
+- Inserts a double quote in a string.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = "We are the so-called \"Vikings\" from the north.";
+  printf("%s", txt);
+ 
+  return 0;
+}
+```
+>**OUTPUT:** <BR>  We are the so-called "Vikings" from the north.
+
+**The sequence `\'` :**  
+- Inserts a single quote in a string.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = "It\'s alright.";
+  printf("%s", txt);
+ 
+  return 0;
+}
+```
+>**OUTPUT :** <br> It's alright.
+
+**The sequence `\\` :**
+- Inserts a single backslash in a string.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = "The character \\ is called backslash.";
+  printf("%s", txt);
+ 
+  return 0;
+}
+```
+>**OUTPUT :** <br> The character \ is called backslash.
+
+**Other popular escape characters in C are:**
+|Escape Character|Result|
+|---|---|
+|`\n`|New Line|
+|`\t`|Tab|
+|`\0`|Null|
+
+**The escape sequence `\n`**<BR>
+**EXAMPLE:** Create a newline.
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = "Hello\nWorld!";
+  printf("%s", txt);
+ 
+  return 0;
+}
+```
+>**OUTPUT:** <BR>
+>Hello
+><br>
+>World!
+
+**The escape sequence `\t`** <br>
+**EXAMPLE:**  Used to insert a horizontal tab character and shift the cursor to the following tab stop.
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = "Hello\tWorld!";
+  printf("%s", txt);
+ 
+  return 0;
+}
+```
+>**OUTPUT :** <BR> `Hello    World!`
+
+**The escape sequence `\0`** <br>
+**EXAMPLE:** Denotes the null character, with value zero
+```
+#include <stdio.h>
+
+int main() {
+  char txt[] = {'H', 'e', 'l', 'l', 'o', '\0'};
+  printf("%s", txt);
+  
+  return 0;
+}
+```
+>**OUTPUT :** <BR> Hello
+---
+
+**String Functions** <br>
+Include the `<string.h>` header file in the program to use string functions.
+```
+#include <string.h>
+```
+**String Length**
+- The `strlen()` function: To get the length of a string.
+- Example:
+```
+#include <stdio.h>
+#include <string.h>
+ 
+int main() {
+  char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  printf("%d", strlen(alphabet));
+  return 0;
+}
+```
+>**0UTPUT :** <BR> 26
+
+>[!NOTE]
+><br>
+>**`sizeof` and `strlen` behaves differently, as sizeof also includes the \0 character when counting.** <br>
+>EXAMPLE:
+>```
+>char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+>printf("%d", strlen(alphabet));   // 26
+>printf("%d", sizeof(alphabet));   // 27
+>```
+>**`sizeof` will always return the memory size (in bytes), and not the actual string length.** <br>
+>EXAMPLE:
+>```
+>char alphabet[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+>printf("%d", strlen(alphabet));   // 26
+>printf("%d", sizeof(alphabet));   // 50
+>```
+
+**Concatenate Strings**
+- **The strcat() function:** To concatenate (combine) two strings.
+- EXAMPLE:
+```
+#include <stdio.h>
+#include <string.h>
+ 
+int main() {
+  char str1[20] = "Hello ";
+  char str2[] = "World!";
+ 
+  // Concatenate str2 to str1 (the result is stored in str1)
+  strcat(str1, str2);
+  
+  // Print str1
+  printf("%s", str1);
+ 
+  return 0;
+}
+```
+>**OUTPUT :** Hello World!
+<br>
+
+>[!NOTE]
+>The size of str1 should be large enough to store the result of the two strings combined.
+
+**Copy Strings**
+- **The `strcpy()` function :** To copy the value of one string to another.
+- EXAMPLE:
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str1[20] = "Hello World!";
+  char str2[20];
+
+  // Copy str1 to str2
+  strcpy(str2, str1);
+
+  // Print str2
+  printf("%s", str2);
+  
+  return 0;
+}
+```
+>**OUTPUT :** Hello World! <br>
+
+>[!NOTE]
+>The size of str2 should be large enough to store the copied string.
+
+**Compare Strings**
+- **The `strcmp()` function :** To compare two strings.
+- It returns `0` if the two strings are equal, otherwise a value that is not 0.
+- EXAMPLE  :
+```
+char str1[] = "Hello";
+char str2[] = "Hello";
+char str3[] = "Hi";
+
+// Compare str1 and str2, and print the result
+printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
+
+// Compare str1 and str3, and print the result
+printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal)
+```
+### C User Input
+
+**USER INPUT** <br>
+- **The `scanf()` function :** To get user input.
+- **EXAMPLE :** Output a number entered by the user.
+```
+#include <stdio.h>
+
+int main() {
+  // Create an integer variable that will store the number we get from the user
+  int myNum;
+
+  // Ask the user to type a number
+  printf("Type a number and press enter: \n"); 
+
+  // Get and save the number the user types
+  scanf("%d", &myNum);
+
+  // Print the number the user typed
+  printf("Your number is: %d", myNum);
+
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Type a number and press enter: 4
+>Your number is: 4 <BR>
+
+>[!NOTE]
+>The `scanf()` function takes two arguments: the format specifier of the variable (`%d` in the example above) and the reference operator (`&myNum`), which stores the memory address of the variable.
+
+**Multiple Inputs**
+- The `scanf()` function also allow multiple inputs.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  // Create an int and a char variable
+  int myNum;
+  char myChar;
+
+  // Ask the user to type a number AND a character
+  printf("Type a number AND a character and press enter: \n");
+
+  // Get and save the number AND character the user types
+  scanf("%d %c", &myNum, &myChar);
+
+  // Print the number
+  printf("Your number is: %d\n", myNum);
+
+  // Print the character
+  printf("Your character is: %c\n", myChar);
+  
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Type a number AND a character and press enter: 5b <BR>
+>Your number is: 5 <BR>
+>Your character is: b 
+
+**Take String Input** <br>
+**EXAMPLE :** Output the name of a user.
+```
+#include <stdio.h>
+
+int main() {
+  // Create a string
+  char firstName[30];
+
+  // Ask the user to input some text (name)
+  printf("Enter your first name and press enter: \n");
+
+  // Get and save the text
+  scanf("%s", firstName);
+
+  // Output the text
+  printf("Hello %s", firstName);
+  
+  return 0;
+}
+```
+>**OUTPUT :** <BR>
+>Enter your first name and press enter: <BR>
+>John  <BR>
+>Hello John <BR>
+
+>[!NOTE]
+>When working with strings in `scanf()`, you must specify the size of the string/array (we used a very high number, 30 in our example, but atleast then we are certain it will store enough characters for the first name), and you don't have to use the reference operator (`&`). <br>
+>However, the `scanf()` function has some limitations: it considers space (whitespace, tabs, etc) as a terminating character, which means that it can only display a single word (even if you type many words).
+
+**The `fgets()` function :** 
+- To read a line of text.
+- Must include the following arguments: the name of the string variable, `sizeof(string_name)`, and `stdin`.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  // Create a string
+  char fullName[30];
+
+  // Ask the user to input some text (full name)
+  printf("Type your full name and press enter: \n");
+
+  // Get the text
+  fgets(fullName, sizeof(fullName), stdin);
+
+  // Output the text
+  printf("Hello %s", fullName);
+  
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Type your full name and press enter:
+>John Doe
+>Hello John Doe
+
+### MEMORY ADDRESS
+- When a variable is created in C, a memory address is assigned to the variable.
+- The memory address is the location of where the variable is stored on the computer.
+- When we assign a value to the variable, it is stored in this memory address.
+- To access it, use the reference operator (&), and the result represents where the variable is stored.
+- EXAMPLE :
+```
+int myAge = 43;
+printf("%p", &myAge); // Outputs 0x7ffe5367e044
+```
+>[!NOTE]
+>`&myAge` is often called a "pointer". A pointer basically stores the memory address of a variable as its value. To print pointer values, we use the `%p` format specifier.
+
+### POINTERS
+**Creating Pointers**
+- A pointer is a variable that stores the memory address of another variable as its value.
+- A pointer variable points to a data type (like `int`) of the same type, and is created with the `*` operator.
+- The address of the variable you are working with is assigned to the pointer.
+- EXAMPLE:
+```
+#include <stdio.h>
+
+int main() {
+  int myAge = 43;  // An int variable
+  int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
+
+  // Output the value of myAge (43)
+  printf("%d\n", myAge);
+
+  // Output the memory address of myAge (0x7ffe5367e044)
+  printf("%p\n", &myAge);
+
+  // Output the memory address of myAge with the pointer (0x7ffe5367e044)
+  printf("%p\n", ptr);
+
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>43
+><br>
+>0x7ffe5367e044
+><br>
+>0x7ffe5367e044
+
+<details>
+<summary>
+    EXPLAINATION 
+</summary>
+  
+  - Create a pointer variable with the name `ptr`, that points to an `int` variable (`myAge`). Note that the type of the pointer has to match the type of the variable you're working with (`int` in our example).
+  - Use the `&` operator to store the memory address of the `myAge` variable, and assign it to the pointer.
+  -  Now, `ptr` holds the value of `myAge`'s memory address.
+</details>
+
+**DEREFERENCE**
+- To get the value of the variable the pointer points to, by using the `*` operator (the dereference operator).
+- EXAMPLE:
+```
+int myAge = 43;     // Variable declaration
+int* ptr = &myAge;  // Pointer declaration
+
+// Reference: Output the memory address of myAge with the pointer (0x7ffe5367e044)
+printf("%p\n", ptr);
+
+// Dereference: Output the value of myAge with the pointer (43)
+printf("%d\n", *ptr);
+```
+<br>
+
+>[!NOTE]
+><BR>
+>The `*` sign can be confusing here, as it does two different things in our code.
+>- When used in declaration (`int* ptr`), it creates a pointer variable
+>- When not used in declaration, it act as a dereference operator.
+><BR>
+>
+>**Good To Know :** There are two ways to declare pointer variables in C:
+>```
+>int* myNum;
+>int *myNum;
+>```
+
+**Pointers and Arrays**
+- Pointers can also be used to access arrays.
 
 # C-PROGRAMS
-<BR>
 
 **PROGRAM 1**
 <br>
@@ -826,8 +1262,7 @@ int main(){
     return 0;
 }
 ```
-OUTPUT: HELLO WORLD!
-<br>
+>**OUTPUT:** <br> HELLO WORLD!
 
 >[!NOTE]
 >Every C statement ends with a semicolon `;`
@@ -862,8 +1297,7 @@ int main(){
     return 0;
 }
 ```
->OUTPUT:
-><br>
+>**OUTPUT:** <br>
 >Whatever you are,
 ><br>
 >be a good one.
