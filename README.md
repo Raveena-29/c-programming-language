@@ -1318,7 +1318,7 @@ int main(){
 }
 
 ```
->**OUTPUT :**
->Enter the temperature (F) :32
+>**OUTPUT :** <br>
+>Enter the temperature (F) :32 <br>
 >Temperature in Centigrade =0.000000
 ---
