@@ -1249,6 +1249,78 @@ printf("%d\n", *ptr);
 
 **Pointers and Arrays**
 - Pointers can also be used to access arrays.
+- Consider the following program:
+```
+#include<stdio.h>
+
+int main()
+{
+int arr[5] = { 1, 2, 3, 4, 5 };
+int *ptr = arr;
+
+printf("%p\n", ptr);
+return 0;
+}
+```
+>In the above program, we have a pointer ptr that points to the 0th element of the array. Similarly, we can also declare a pointer that can point to whole array instead of only one element of the array. This pointer is useful when talking about multidimensional arrays.
+- **SYNTAX :**
+  - Here:
+    - **data_type** is the type of data that the array holds.
+    - **var_name** is the name of the pointer variable.
+    - **size_of_array** is the size of the array to which the pointer will point.
+```
+data_type (*var_name)[size_of_array];
+```
+>EXAMPLE:
+>```
+>int (*ptr)[10];
+>```
+<BR>
+
+>[!NOTE]
+>The pointer that points to the 0th element of array and the pointer that points to the whole array are totally different. The following program shows this:
+>```
+>// C program to understand difference between 
+>// pointer to an integer and pointer to an
+>// array of integers. 
+>#include<stdio.h>
+>int main()
+>{
+>	// Pointer to an integer
+>	int *p; 
+>	
+>	// Pointer to an array of 5 integers
+>	int (*ptr)[5]; 
+>	int arr[5];
+>	
+>	// Points to 0th element of the arr.
+>	p = arr;
+>	
+>	// Points to the whole array arr.
+>	ptr = &arr; 
+>	
+>	printf("p = %p, ptr = %p\n", p, ptr);
+>	
+>	p++; 
+>	ptr++;
+>	
+>	printf("p = %p, ptr = %p\n", p, ptr);
+>	
+>	return 0;
+>}
+>```
+>
+>**OUTPUT**  <BR>
+>p = 0x7fff6463e890, ptr = 0x7fff6463e890 <BR>
+>p = 0x7fff6463e894, ptr = 0x7fff6463e8a4 <br>
+>
+>Here, p is pointer to 0th element of the array arr, while ptr is a pointer that points to the whole array arr.
+>- The base type of p is int while base type of ptr is ‘an array of 5 integers’.
+>- We know that the pointer arithmetic is performed relative to the base size, so if we write ptr++, then the pointer ptr will be shifted forward by 20 bytes.
+>- The following figure shows the pointer p and ptr. The darker arrow denotes a pointer to an array. 
+
+
+
 
 # C-PROGRAMS
 
