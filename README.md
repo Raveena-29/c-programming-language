@@ -131,6 +131,57 @@ printf("%lu\n", sizeof(myDouble));
 printf("%lu\n", sizeof(myChar));
 ```
 ---
+## C Operator Precedence
+|Precedence|Operator|Description|Associativity|
+|---|---|---|---|
+|1|`++` `--`|Suffix/postfix increment and decrement|Left-to-right|
+||`()`|Function call||
+||`[]`|Array subscripting||
+||`.`|Structure and union member access||
+||`->`|Structure and union member access through pointer||
+||`(type){_list_}`|Compound literal(C99)||
+|---|---|---|---|
+|2|	`++` `--`|Prefix increment and decrement|	Right-to-left|
+||`+` `-`|Unary plus and minus||
+||`!` `~`|	Logical NOT and bitwise NOT||
+||`(_type_)`|	Cast||
+||`*`|	Indirection (dereference)||
+||`&`|	Address-of||
+||`sizeof`|	Size-of||
+||`_Alignof` |	Alignment requirement||
+|---|---|---|---|
+|3| `*` `/` `%` |	Multiplication, division, and remainder|Left-to-right|
+|---|---|---|---|
+|4|`+` `-`|Addition and subtraction|Left-to-right|
+|---|---|---|---|
+|5| `<<` `>>` |	Bitwise left shift and right shift|Left-to-right|
+|---|---|---|---|
+|6|`<` `<=`|For relational operators < and ≤ respectively|Left-to-right|
+||`>` `>=`|For relational operators > and ≥ respectively||
+|---|---|---|---|
+|7|`==` `!=`|For relational = and ≠ respectively|Left-to-right|
+|---|---|---|---|
+|8|`&`|Bitwise AND |Left-to-right|
+|---|---|---|---|
+|9|`^`|Bitwise XOR (exclusive or)|Left-to-right|
+|---|---|---|---|
+|10|	`|` |	Bitwise OR (inclusive or)|Left-to-right|
+|---|---|---|---|
+|11|	`&&`	|Logical AND|Left-to-right|
+|---|---|---|---|
+|12|	`||`	|Logical OR|Left-to-right|
+|---|---|---|---|
+|13|`?:`|Ternary conditional|Right-to-left|
+|---|---|---|---|
+|14|`=`|Simple assignment|Right-to-left|
+||`+=` `-=`|Assignment by sum and difference||
+||`*=` `/=` `%=`|Assignment by product, quotient, and remainder||
+||`<<=` `>>=`|Assignment by bitwise left shift and right shift||
+||`&=` `^=` `|=`|Assignment by bitwise AND, XOR, and OR||
+|---|---|---|---|
+|15|`,`|Comma|Left-to-right|
+
+---
 ## DATA TYPE CONVERSION
 - There are two types of conversion in C:
   - Implicit Conversion (automatically)
@@ -1324,9 +1375,8 @@ data_type (*var_name)[size_of_array];
 
 # C-PROGRAMS
 
-**PROGRAM 1**
-<br>
-**QUESTION :** Printing HELLO WORLD! .
+**PROGRAM 1** <br> **QUESTION :** Printing HELLO WORLD! . <br>
+**Solution :**
 ```
 #include<stdio.h>
 int main(){
@@ -1358,8 +1408,8 @@ int main(){
 </details>
 
 ---
-**PROGRAM 2**<br>
-**QUESTION :** Printing using newline character.
+**PROGRAM 2**<br> **QUESTION :** Printing using newline character. <br>
+**Solution :** 
 ```
 #include<stdio.h>
 int main(){
@@ -1374,8 +1424,8 @@ int main(){
 >be a good one.
 ---
 **PROGRAM 3** <br>
-**QUESTION :** <br>
-**Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a program to convert this temperature into Centigrade degrees.**
+**QUESTION :** <br> **Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a program to convert this temperature into Centigrade degrees.** <br>
+**Solution :**
 ```
 // Conversion of temperature from Fahrenheit to Centigrade
 #include <stdio.h>
@@ -1388,9 +1438,87 @@ int main(){
   printf("Temperature in Centigrade =%f\n",celcius);
   return 0;
 }
-
 ```
 >**OUTPUT :** <br>
 >Enter the temperature (F) :32 <br>
 >Temperature in Centigrade =0.000000
 ---
+**PROGRAM 4**  <br>
+**QUESTION :** <br> **The length & breadth of a rectengle and radius of a circle are input through the keyboard. Write a program to calculate the area andperimeter of the rectange, and the area and circumference of the circle.** <br>
+**Solution :**
+```
+#include <stdio.h>
+int main(){
+  float length , breadth , radius , area_1 ,area_2, perimeter , circumference;
+  printf("Enter the length of a rectangle:");
+  scanf("%f",&length);
+  printf("Enter the breadth of the rectangle:");
+  scanf("%f",&breadth);
+  printf("Enter the radius of a circle:");
+  scanf("%f",&radius);
+  area_1= length*breadth;
+  area_2=3.14*radius*radius;
+  perimeter=2*(length+breadth);
+  circumference=2*3.14*radius;
+  printf("\nArea of the rectangle : %f",area_1);
+  printf("\nPerimeter of the rectangle : %f",perimeter);
+  printf("\nArea of the circle : %f",area_2);
+  printf("\nCircumference of the circle : %f",circumference);
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Enter the length of a rectangle:16 <br>
+>Enter the breadth of the rectangle:12 <br>
+>Enter the radius of a circle:10 <br>
+> <br>
+>Area of the rectangle : 192.000000 <br>
+>Perimeter of the rectangle : 56.000000 <br>
+>Area of the circle : 314.000000 <br>
+>Circumference of the circle : 62.799999
+---
+**PROGRAM 5** <br>
+**QUESTION** <br> **Paper of size A<sub>0</sub> has dimensions 1189 mm x 841 mm. Each subsequent size A(n) is defind as A(n-1) cut in half, parallel to its shorter sides. Write a program to calculate and print paper sizes A<sub>0</sub> , A<sub>1</sub>, A<sub>2</sub>,..., A<sub>8</sub> .**
+**Solution :**
+```
+#include <stdio.h>
+int main (){
+  int i;
+  float height=1189, width=841 , temp;
+  for(i=0;i<=8;i++)
+  {
+    printf("\nA%d=%f mm x %f mm",i , height,width);
+    temp=height;    //temp=1189
+    height=width;   //height=841    
+    width=temp/2;   //width=(temp/2) = (1189/2)
+  }
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>A0=1189.000000 mm x 841.000000 mm  <br>
+>A1=841.000000 mm x 594.500000 mm   <br>
+>A2=594.500000 mm x 420.500000 mm   <br>
+>A3=420.500000 mm x 297.250000 mm   <br>
+>A4=297.250000 mm x 210.250000 mm   <br>
+>A5=210.250000 mm x 148.625000 mm   <br>
+>A6=148.625000 mm x 105.125000 mm   <br>
+>A7=105.125000 mm x 74.312500 mm    <br>
+>A8=74.312500 mm x 52.562500 mm     <br>
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
