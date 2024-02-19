@@ -1506,13 +1506,53 @@ int main (){
 >A7=105.125000 mm x 74.312500 mm    <br>
 >A8=74.312500 mm x 52.562500 mm     <br>
 ---
+**PROGRAM 6** <br>
+**QUESTION :** <br> Write will be the output of the following code.
+```
+#include <stdio.h>
+int main(){
+  float a=5,b=2;
+  int c,d;
+  c= a%b;
+  d=a/2;
+  printf("%d\n",d);
+  return 0;
+}
+```
+>**OUTPUT :** <br> error: invalid operands to binary % (have 'float' and 'float')
 
+>[!NOTE]
+>Mod (%) operator cannot be used on floats.
+---
+**PROGRAM 7** <br>
+**QUESTION :** <br> If a five-digit number is input through the keyboard, write a program to calculate the sum of its digits. <br>
+**SOLUTION :**
+```
+#include <stdio.h>
+int main(){
+  int num,a,b,c,d,e;
+  printf("\nEnter 5 digit number: ");
+  scanf("%d",&num);
+  a=num/10000;
+  b=(num/1000)%10;
+  c=(num/100)%10;
+  d=(num/10)%10;
+  e=(num%10);
+  int sum=a+b+c+d+e;
+  printf("\nThe sum of the 5 digit number is %d",sum);
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Enter 5 digit number: 87453 <br>
+> <br>
+>The sum of the 5 digit number is 27
+---
+**PROGRAM 8**
+**QUESTION :** <br>  <br>
+```
 
-
-
-
-
-
+```
 
 
 
