@@ -49,6 +49,11 @@ printf("Hello World!");
 >OUTPUT:
 >Hello World!
 ---
+## Types of constants
+- Primary constants :
+  - Integer, real , character
+- Secondary constants :
+  - Pointer, array, string, structure, union, enum
 
 ## VARIABLES
 - Variables are containers for storing data values, like numbers and characters.
@@ -1551,10 +1556,33 @@ int main(){
 **PROGRAM 8**
 **QUESTION :** <br>  <br>
 ```
-
+#include <stdio.h>
+int main(){
+  float km, m , feet , inch , cm;
+  printf("Enter the distance between two cities in kilometers : ");
+  scanf("%f",&km);
+  m = km*1000;
+  cm=km*1000*100;
+  inch=cm/2.54;
+  feet=inch/12;
+  printf("The distance between two cities in meters : %f\n",m);
+  printf("The distance between two cities in centimeters : %f\n",cm); 
+  printf("The distance between two cities in inches : %f\n",inch);
+  printf("The distance between two cities in feets : %f\n",feet);
+  return 0;
+}
+```
+>**OUTPUT :** <br>
+>Enter the distance between two cities in kilometers : 5.5 <br>
+>The distance between two cities in meters : 5500.000000 <br>
+>The distance between two cities in centimeters : 550000.000000 <br>
+>The distance between two cities in inches : 216535.437500 <br>
+>The distance between two cities in feets : 18044.619141 <br>
+**PROGRAM 8**
+**QUESTION :** <br>  <br>
 ```
 
-
+```
 
 
 
