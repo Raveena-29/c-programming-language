@@ -1553,8 +1553,7 @@ int main(){
 > <br>
 >The sum of the 5 digit number is 27
 ---
-**PROGRAM 8**
-**QUESTION :** <br>  <br>
+**PROGRAM 8** <br> **QUESTION :** <br>  <br>
 ```
 #include <stdio.h>
 int main(){
@@ -1577,9 +1576,10 @@ int main(){
 >The distance between two cities in meters : 5500.000000 <br>
 >The distance between two cities in centimeters : 550000.000000 <br>
 >The distance between two cities in inches : 216535.437500 <br>
->The distance between two cities in feets : 18044.619141 <br>
-**PROGRAM 8**
-**QUESTION :** <br>  <br>
+>The distance between two cities in feets : 18044.619141
+<br>
+
+**PROGRAM 8** <br> **QUESTION :** <br>  
 ```
 
 ```
